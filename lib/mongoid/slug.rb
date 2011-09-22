@@ -117,7 +117,7 @@ module Mongoid #:nodoc:
 
     def find_unique_slug
       # TODO: An epic method which calls for refactoring.
-      slug = slug_builder.call(self).to_url
+      slug = slug_builder.call(self).parameterize
 
       # Regular expression that matches slug, slug-1, slug-2, ... slug-n
       # If slug_name field was indexed, MongoDB will utilize that index to
